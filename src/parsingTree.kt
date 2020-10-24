@@ -85,6 +85,15 @@ fun printTree(node: TreeNode) {
     }
 }
 
+// Identify the whole string
+fun identifyEntireString(expr: String){
+    var scanner = Regex("""[\-+]?\d+(\.?\d*)?([+\-*/](\d+(\.?\d*)?|<\d+(\.?\d*)?>))*""")
+    var res = scanner.findAll(expr).toList()
+    res?.forEach{
+        println(it.value)
+    }
+}
+
 // Calculate Parsing Tree
 fun calTree(node: TreeNode): Double? {
     if (node.type==0) {
